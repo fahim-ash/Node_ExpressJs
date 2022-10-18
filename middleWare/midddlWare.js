@@ -4,6 +4,7 @@ const app=express();
 app.use(express.json());
 
 
+
 const logger=(req,res,next)=>{
     const name=req.body.name;
 
@@ -19,6 +20,7 @@ const logger=(req,res,next)=>{
 app.get('/',(req,res)=>{
     res.send('Hello World')
 })
+// here we are using the middle ware between res and req
 
 app.post ('/',logger,(req,res)=>{
     res.send("login successful")
